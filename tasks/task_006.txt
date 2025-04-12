@@ -1,0 +1,11 @@
+# Task ID: 6
+# Title: Implement 'Åbningstider' Page
+# Status: pending
+# Dependencies: 2, 3
+# Priority: high
+# Description: Create the 'Opening Hours' page displaying the clinic's operating hours.
+# Details:
+Develop the 'Åbningstider' page with a clear and easy-to-read display of the clinic's opening hours. Use a table or card-based layout for presenting the hours for each day of the week. Include any special notes about holidays, lunch breaks, or other schedule variations. Ensure the information is prominently displayed and easy to find. Make the page fully responsive for all device sizes.
+
+# Test Strategy:
+Verify that the opening hours are displayed correctly and clearly. Test the page on different devices to ensure responsiveness. Check that the information is easy to read and understand.

@@ -1,0 +1,11 @@
+# Task ID: 14
+# Title: Implement Basic Accessibility Features
+# Status: pending
+# Dependencies: 4, 5, 6, 7, 8, 9, 10
+# Priority: medium
+# Description: Ensure the website meets basic accessibility requirements following WCAG guidelines.
+# Details:
+Implement basic accessibility features throughout the website. Use semantic HTML elements appropriately (headers, nav, main, etc.). Add alt text to all images. Ensure sufficient color contrast between text and background. Make sure all interactive elements are keyboard accessible. Implement proper focus states for interactive elements. Add ARIA attributes where necessary. Ensure form elements (for future implementation) have associated labels.
+
+# Test Strategy:
+Use accessibility testing tools like axe or Lighthouse to identify accessibility issues. Test keyboard navigation throughout the site. Verify color contrast meets WCAG standards. Test with a screen reader to ensure content is properly announced.

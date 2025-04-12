@@ -1,0 +1,11 @@
+# Task ID: 3
+# Title: Implement Dark/Light Mode Toggle Functionality
+# Status: done
+# Dependencies: 2
+# Priority: medium
+# Description: Create the functionality to toggle between dark and light modes with local storage persistence.
+# Details:
+Implement a dark/light mode toggle using Next.js and Tailwind CSS. Use the `next-themes` package to manage theme switching. Configure the theme to persist in local storage so user preferences are remembered between visits. Create appropriate color schemes for both dark and light modes while maintaining the specified color palette. Use a sun/moon icon for the toggle button from a suitable icon library.
+
+# Test Strategy:
+Test the toggle functionality to ensure it correctly switches between dark and light modes. Verify that the theme preference is saved in local storage and persists between page refreshes and browser sessions.

@@ -1,0 +1,11 @@
+# Task ID: 1
+# Title: Setup Next.js Project with Tailwind CSS and Shadcn UI
+# Status: done
+# Dependencies: None
+# Priority: high
+# Description: Initialize a new Next.js project with TypeScript, configure Tailwind CSS, and set up Shadcn UI components library.
+# Details:
+Create a new Next.js project using `npx create-next-app@latest` with TypeScript support. Configure Tailwind CSS following the official documentation. Install and set up Shadcn UI by following their installation guide. Configure the project to use the specified color scheme: Background (#F3EEEA), Accent (#DB5228), and Text (#2E302D) in the Tailwind configuration. Set up the project structure with appropriate folders for components, pages, and utilities.
+
+# Test Strategy:
+Verify that the project builds successfully without errors. Confirm that Tailwind CSS and Shadcn UI components are working correctly by creating a simple test page with basic components.

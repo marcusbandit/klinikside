@@ -1,0 +1,11 @@
+# Task ID: 9
+# Title: Implement 'Priser' Page
+# Status: pending
+# Dependencies: 2, 3
+# Priority: medium
+# Description: Create the 'Prices' page listing the prices for common services.
+# Details:
+Develop the 'Priser' page with a clear and organized listing of prices for common services. Use a table or card-based layout for presenting the service names and their corresponding prices. Group related services together for better readability. Include any notes about payment methods or insurance coverage. Ensure the page is responsive and maintains the established design system.
+
+# Test Strategy:
+Verify that all pricing information is displayed correctly and clearly. Test the page on different devices to ensure responsiveness. Check that the information is organized in a logical and easy-to-understand manner.

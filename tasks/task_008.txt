@@ -1,0 +1,11 @@
+# Task ID: 8
+# Title: Implement 'Henvisninger' Page
+# Status: pending
+# Dependencies: 2, 3
+# Priority: medium
+# Description: Create the 'Referrals' page with information about the referral process.
+# Details:
+Develop the 'Henvisninger' page explaining the clinic's referral process. Include information about how patients can get referrals to specialists. List any relevant specialists the clinic commonly refers to (if applicable). Use clear headings and structured content to make the information easy to understand. Ensure the page follows the established design system and is fully responsive.
+
+# Test Strategy:
+Review the page for correct content display and clarity of information. Test responsiveness on different screen sizes. Verify that the information is presented in a logical and understandable way.

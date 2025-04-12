@@ -1,21 +1,182 @@
-# Project Requirements Document (PRD)
 
-## Project Overview
-[Your project overview here]
 
-## Project Goals
-[List your project goals here]
+    Introduction
+        1.1. Purpose: This document outlines the requirements for a new website for Pernille Christine Jørgensen's doctor's clinic. The website aims to provide information, facilitate online services, and present a modern image.
+        1.2. Scope: This PRD covers the entire website, including all pages ("Forside," "Om Klinikken," "Åbningstider," "Kontakt," "Henvisninger," "Priser," "Links") and associated functionality (dark mode toggle, responsive design, link redirection).
+        1.3. Target Audience: Engineers, designers, and the clinic owner (Pernille Christine Jørgensen).
 
-## Features and Requirements
-[List your features and requirements here]
+    Goals and Objectives
+        2.1. Business Goals:
+            Provide patients with easy access to information about the clinic: Improve patient satisfaction and reduce phone inquiries.
+            Offer convenient online services (e-consultation, appointment booking): Streamline clinic operations and improve efficiency (future implementation).
+            Modernize the clinic's image to attract and retain patients: Appeal to a younger demographic and reinforce the clinic's commitment to innovation.
+        2.2. User Goals:
+            Find information about the clinic's services, opening hours, and contact details: Provide quick and easy access to essential information.
+            Book appointments and request e-consultations easily: Streamline the appointment process and reduce the need for phone calls (future implementation).
+            Access relevant healthcare resources and referrals: Provide convenient access to trusted online resources.
+        2.3. Success Metrics:
+            Website traffic (page views, unique visitors): Tracked using Google Analytics (or similar). Set target of 500 unique visitors per month within 6 months of launch.
+            Usage of online services (e-consultations, appointment bookings): Track the number of e-consultation requests and appointment bookings made through the website (future implementation).
+            Patient satisfaction: Measured through an online feedback form (future implementation).
+            Bounce rate: Target bounce rate of less than 40%.
 
-## Technical Requirements
-- Next.js with TypeScript
-- ShadcN UI components
-- Tailwind CSS for styling
+    Background and Context
+        3.1. Problem Statement: The clinic currently lacks a modern online presence. Patients, particularly younger demographics, expect online access to information and services. A well-designed website will improve patient communication and satisfaction.
+        3.2. Market Analysis: (Placeholder - Research other doctor's clinic websites in the area to understand common features and design trends. Document findings here).
+        3.3. Competitive Analysis: (Placeholder - Analyze the websites of competing clinics to identify strengths and weaknesses. Document findings here).
 
-## Timeline and Milestones
-[Your timeline and milestones here]
+    Product Overview
+        4.1. Product Description: A responsive website for Pernille Christine Jørgensen's doctor's clinic, providing information about the clinic and offering online services. The site will be built using Shadcn UI components with a personalized, modern design in Danish. The website will be easy to navigate and accessible on both desktop and mobile devices.
+        4.2. Key Features:
+            Homepage ("Forside") with introductory text and key links: Provides a welcoming introduction and quick access to important pages.
+            "Om Klinikken" page with information about the clinic and staff: Details the clinic's background, philosophy, and staff qualifications.
+            "Åbningstider" page displaying opening hours: Clearly presents the clinic's operating hours.
+            "Kontakt" page with contact information and a contact form (optional): Provides multiple ways for patients to contact the clinic.
+            "Henvisninger" page with information about referrals: Explains the referral process and provides links to relevant specialists (if applicable).
+            "Priser" page with pricing information: Lists the prices for common services.
+            "Links" page with links to relevant resources (Patientportal, Min Læge app): Provides direct links to external resources, with platform-specific app store redirection.
+            Dark/Light mode toggle: Allows users to switch between light and dark color schemes for optimal viewing comfort.
+            Responsive design for desktop and mobile devices: Ensures the website displays correctly and is usable on all screen sizes.
+        4.3. User Stories:
+            As a patient, I want to find the clinic's opening hours quickly so that I know when I can visit, without having to call.
+            As a patient, I want to book an appointment online easily (future) so that I don't have to call the clinic and wait on hold.
+            As a patient, I want to access the Patientportal easily so that I can view my medical records and manage my health information.
+            As a new patient, I want to find information about the clinic and the doctor so that I can decide if this is the right clinic for me.
+            As a user on a mobile device, I want to be able to easily navigate the website and find the information I need without having to zoom in or scroll horizontally.
 
-## Additional Notes
-[Any additional notes or requirements] 
+    Detailed Requirements
+        5.1. Functional Requirements:
+            The website shall display the content of each page ("Forside," "Om Klinikken," etc.) accurately in Danish: Ensure all text is grammatically correct and professionally written.
+            The "Forside" shall display the provided introductory text: [Insert Introductory Text Here: "Den 1. marts 2025..." ]
+            The "Links" page shall include links to the Patientportal and the Min Læge app (with appropriate platform detection):
+                Patientportal Link: https://patientportal.egclinea.com/?id=613
+                Min Læge App Links:
+                    Android: https://play.google.com/store/apps/details?id=com.trifork.minlaege
+                    iOS: https://apps.apple.com/dk/app/min-l%C3%A6ge/id1445003295
+                Platform Detection: Implement a JavaScript-based platform detection script to redirect users to the appropriate app store based on their device (see Technical Requirements for details). On desktop, link to the appropriate app store based on user agent sniffing (offer both links).
+            The dark/light mode toggle shall switch the website's color scheme: Use a JavaScript-based solution with local storage to persist the user's preference.
+            The website shall be responsive and adapt to different screen sizes: Utilize CSS media queries to ensure the layout adjusts appropriately for various devices (desktop, tablets, mobile phones).
+            The website shall include space for a logo in the top left corner: The logo should link back to the homepage.
+            The website shall include a favicon: Use a 16x16 pixel favicon in .ico format.
+        5.2. Non-Functional Requirements:
+            Performance: The website shall load quickly (target load time: under 3 seconds). Optimize images, minimize HTTP requests, and leverage browser caching.
+            Usability: The website shall be easy to navigate and use, especially for younger users. Use clear and concise language, intuitive navigation, and a visually appealing design.
+            Accessibility: The website should strive to be accessible (WCAG guidelines - future consideration for more detailed accessibility review). Use semantic HTML, provide alternative text for images, and ensure sufficient color contrast.
+            Responsiveness: The website shall be fully responsive and display correctly on a range of devices, from large desktop monitors to small mobile phone screens. Test on multiple devices and browsers.
+        5.3. Technical Requirements:
+            The website will be built using Next.js, React, Tailwind CSS, and Shadcn UI: This technology stack provides a modern, performant, and customizable platform.
+            The website shall be hosted on Vercel: Vercel offers easy deployment and automatic scaling for Next.js applications.
+            The website will use the specified color scheme:
+                White (Background): "#F3EEEA"
+                Red (Accent): "#DB5228"
+                Black (Text): "#2E302D"
+            Platform Detection Script (Example using JavaScript - this is a simplified example and may need adjustments):
+
+javascript
+
+function getMobileOperatingSystem() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Windows Phone must come first because its UA also contains "Android"
+  if (/windows phone/i.test(userAgent)) {
+    return "Windows Phone";
+  }
+
+  if (/android/i.test(userAgent)) {
+    return "Android";
+  }
+
+  // iOS detection from: http://stackoverflow.com/a/901144
+  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    return "iOS";
+  }
+
+  return "unknown";
+}
+
+function redirectToAppStore() {
+  const os = getMobileOperatingSystem();
+  if (os === "Android") {
+    window.location.href =
+      "https://play.google.com/store/apps/details?id=com.trifork.minlaege";
+  } else if (os === "iOS") {
+    window.location.href =
+      "https://apps.apple.com/dk/app/min-l%C3%A6ge/id1445003295";
+  } else {
+    // Desktop - provide links to both app stores
+    //  Consider showing a message with buttons linking to each store.
+    console.log("Desktop OS - Provide both links");
+  }
+}
+
+// Call this function on the "Links" page.
+
+    Design and User Interface (UI)
+        6.1. UI Mockups/Wireframes: (Create these using Figma or a similar tool. Include mockups for desktop and mobile views. Pay close attention to the layout of each page, the placement of the logo and navigation, and the styling of the Shadcn UI components. Link to Figma file: [Insert Figma Link Here] )
+            Homepage Mockup: Show the introductory text, logo placement, navigation links, and links to Patientportal/Min Læge.
+            "Om Klinikken" Mockup: Show the layout for displaying information about the clinic and staff.
+            "Åbningstider" Mockup: Show how the opening hours will be displayed.
+            "Kontakt" Mockup: Show the contact information and the optional contact form.
+            "Henvisninger" Mockup: Show the layout for displaying referral information.
+            "Priser" Mockup: Show the layout for displaying pricing information.
+            "Links" Mockup: Show how the Patientportal and Min Læge app links are presented.
+        6.2. User Interface (UI) Requirements:
+            The website shall use a modern and visually appealing design, leveraging Shadcn UI components: Customize the Shadcn UI components to match the clinic's brand and appeal to a younger audience. Consider using rounded corners, subtle shadows, and a clean layout.
+            The color scheme shall adhere to the specified colors: Use the specified colors consistently throughout the website. Use the red color as an accent color for buttons and links.
+            The logo shall be displayed in the top left corner: Ensure the logo is clearly visible and links back to the homepage.
+            The navigation menu shall be clear and easy to use: Use a simple and intuitive navigation menu. Consider using a hamburger menu for mobile devices.
+            The dark/light mode toggle shall be prominently displayed in the top right corner: Use a clear and recognizable icon for the toggle (e.g., a sun/moon icon).
+            The website shall use clear and readable typography: Choose a font that is easy to read on both desktop and mobile devices. Use appropriate font sizes and line heights. Consider using a sans-serif font for body text and a serif font for headings (or vice versa).
+        6.3. User Experience (UX) Requirements:
+            The website shall be intuitive and easy to navigate: Ensure users can easily find the information they need. Use clear and concise language and a consistent design.
+            Users should be able to find the information they need quickly and easily: Minimize the number of clicks required to access important information.
+            The website should provide a positive and engaging user experience: Use a visually appealing design, interactive elements, and clear calls to action.
+
+    Release Criteria
+        7.1. Definition of Done:
+            All pages are complete and contain the required content: All text and images are finalized and approved.
+            All features are implemented and functioning correctly: The dark/light mode toggle, platform detection script, and responsive design are all working as expected.
+            The website is responsive and displays correctly on all devices: Tested on a range of devices and browsers.
+            The website meets performance and accessibility requirements: The website loads quickly and is accessible to users with disabilities (to the extent possible at this stage).
+            The website has been tested thoroughly: Functional, usability, and performance testing have been completed.
+        7.2. Testing Strategy:
+            Functional testing: Verify that all links work, forms submit correctly (future), and the dark/light mode toggle functions as expected.
+            Usability testing: Have a group of users test the website and provide feedback on its ease of use.
+            Responsiveness testing: Test the website on different devices and browsers to ensure it displays correctly. Use browser developer tools to simulate different screen sizes.
+            Performance testing: Use a website speed testing tool (e.g., Google PageSpeed Insights) to identify performance bottlenecks.
+        7.3. Rollout Plan:
+            Deploy the website to Vercel.
+            Update the clinic's existing website (if any) to redirect to the new website.
+            Announce the launch of the new website to patients.
+
+    Future Considerations (Optional)
+        8.1. Future Enhancements:
+            Online appointment booking system: Integrate with an existing appointment booking system or develop a custom solution.
+            Contact form: Allow patients to contact the clinic directly through the website.
+            Patient feedback form: Collect feedback from patients to improve the website and the clinic's services.
+            Multi-language support: Add support for other languages (e.g., English) to cater to a wider audience.
+            Blog or news section: Share health tips and clinic updates with patients.
+        8.2. Open Issues/Risks:
+            Ensuring all content is accurate and up-to-date: Establish a process for regularly reviewing and updating the website content.
+            Maintaining the website's performance as it grows: Monitor website performance and optimize as needed.
+            Accessibility compliance: Conduct a more thorough accessibility audit and address any issues identified.
+            Data privacy and security: Ensure compliance with GDPR and other relevant data privacy regulations, especially if implementing features like contact forms or appointment booking.
+
+    Appendix (Optional)
+        9.1. Glossary of Terms
+            PRD: Product Requirements Document
+            UI: User Interface
+            UX: User Experience
+            WCAG: Web Content Accessibility Guidelines
+            GDPR: General Data Protection Regulation
+        9.2. Supporting Documents:
+            Logo files: [Insert path/link to logo files here]
+            Favicon file: [Insert path/link to favicon file here]
+            UI Mockups (Figma link): [Insert Figma Link Here]
+
+Action Items:
+
+    Provide Logo and Favicon: You need to provide the actual image files for the logo and favicon.
+    Complete Page Content: You need to provide the text content for the "Om Klinikken," "Åbningstider," "Kontakt," "Henvisninger," and "Priser" pages.
+    Review and Approve Content: Review all the text in this PRD to ensure it's accurate and reflects your vision for the website.
+    Create UI Mockups: Create detailed UI mockups using Figma (or a similar tool) to visualize the website's design.

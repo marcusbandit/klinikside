@@ -1,0 +1,11 @@
+# Task ID: 18
+# Title: Conduct Cross-Browser Testing
+# Status: pending
+# Dependencies: 12, 13, 14
+# Priority: medium
+# Description: Test the website on different browsers to ensure consistent functionality and appearance.
+# Details:
+Test the website on different browsers to ensure consistent functionality and appearance. Test on major browsers including Chrome, Firefox, Safari, and Edge. Verify that all features work correctly on each browser. Check for any visual inconsistencies or layout issues. Test JavaScript functionality across browsers. Address any browser-specific issues that are identified.
+
+# Test Strategy:
+Create a testing matrix covering all major browsers and key functionality. Document any browser-specific issues and their resolutions. Use browser developer tools to debug issues. Consider using a service like BrowserStack for comprehensive testing.

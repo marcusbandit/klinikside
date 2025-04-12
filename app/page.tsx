@@ -1,103 +1,74 @@
-import Image from "next/image";
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { AppDownload } from "@/components/app-download"
+import Image from "next/image"
+import { ExternalLink } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="container mx-auto px-4 py-8 space-y-8 animate-in fade-in duration-700">
+      <h1 className="text-4xl font-bold text-center mb-12">Din læge klinik</h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <Card className="p-6 prose prose-lg dark:prose-invert max-w-none">
+        <div className="space-y-4">
+          <p>
+            Den 1. marts 2025 gik Ole Abrahamson på pension, og jeg har overtaget Oles klinik.
+          </p>
+          <p>
+            I forbindelse med overdragelsen af en klinik er der mange praktiske ting, der skal falde på plads. 
+            Det kan nok ikke undgås, at der vil opstå vanskeligheder og måske ventetider i begyndelsen. 
+            Det håber jeg, I har forståelse for.
+          </p>
+          <p>
+            E-konsultation og tidsbestilling er nu oppe at køre. Jeg anbefaler brug af den officielle app 
+            'Min Læge' fra PLO (Praktiserende Lægers Organisation), der er downloadet af mere end 2 millioner 
+            danskere. Via den er det også muligt at lave videokonsultationer, så du ikke behøver at fremmøde 
+            hver gang. Alternativt kan Patientportalen fortsat anvendes. Se link til både Min Læge-appen og 
+            Patientportalen nedenfor.
+          </p>
+          <p>
+            Jeg byder alle velkommen og ser frem til at hilse på klinikkens patienter.
+          </p>
+          <p className="font-semibold">
+            Mange venlige hilsner
+          </p>
+          <p className="font-semibold">
+            Pernille Christine Jørgensen<br />
+            Speciallæge i almen medicin
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </Card>
+
+      <div className="grid md:grid-cols-2 gap-8 mt-12">
+        <div className="flex flex-col items-center space-y-4">
+          <h2 className="text-2xl font-semibold mb-4">Min Læge App</h2>
+          <AppDownload />
+        </div>
+
+        <div className="flex flex-col items-center space-y-4">
+          <h2 className="text-2xl font-semibold mb-4">Patientportal</h2>
+          <Card className="p-6 flex flex-col items-center space-y-4">
+            <Image
+              src="https://patientportal.egclinea.com/Resources/Images/patientportal_forside.svg"
+              alt="Patientportal"
+              width={200}
+              height={200}
+              className="transition-transform hover:scale-105"
+            />
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => window.open("https://patientportal.egclinea.com/?id=613", "_blank")}
+              className="flex items-center gap-2 transition-colors hover:bg-primary hover:text-primary-foreground"
+            >
+              <ExternalLink className="h-5 w-5" />
+              Gå til Patientportal
+            </Button>
+          </Card>
+        </div>
+      </div>
+    </main>
+  )
 }

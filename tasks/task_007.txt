@@ -1,0 +1,11 @@
+# Task ID: 7
+# Title: Implement 'Kontakt' Page
+# Status: pending
+# Dependencies: 2, 3
+# Priority: high
+# Description: Create the 'Contact' page with the clinic's contact information.
+# Details:
+Develop the 'Kontakt' page with comprehensive contact information including phone number, email address, and physical address. Include an embedded Google Map showing the clinic's location if coordinates are available. Structure the information clearly with appropriate icons and formatting. Ensure all contact details are easy to find and use. Include space for a future contact form implementation (marked as 'coming soon').
+
+# Test Strategy:
+Verify that all contact information is displayed correctly. Test the page on different devices to ensure responsiveness. Check that any links (email, phone) are correctly formatted and functional.
