@@ -1,0 +1,21 @@
+# Project Requirements Document (PRD)
+
+## Project Overview
+[Your project overview here]
+
+## Project Goals
+[List your project goals here]
+
+## Features and Requirements
+[List your features and requirements here]
+
+## Technical Requirements
+- Next.js with TypeScript
+- ShadcN UI components
+- Tailwind CSS for styling
+
+## Timeline and Milestones
+[Your timeline and milestones here]
+
+## Additional Notes
+[Any additional notes or requirements] 
