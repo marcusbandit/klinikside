@@ -2,8 +2,9 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu } from "lucide-react"
-
+import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -11,37 +12,56 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 
+// Import the same routes as desktop nav
+const routes = [
+  {
+    href: "/",
+    label: "Forside"
+  },
+  {
+    href: "/om-klinikken",
+    label: "Om klinikken"
+  },
+  {
+    href: "/tidsbestilling",
+    label: "Tidsbestilling"
+  },
+  {
+    href: "/kontakt",
+    label: "Kontakt"
+  }
+]
+
 export function MobileNav() {
+  const pathname = usePathname()
+  const [open, setOpen] = React.useState(false)
+  
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button variant="ghost" size="icon" className="md:hidden">
           <Menu className="h-5 w-5" />
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left">
-        <nav className="flex flex-col space-y-4">
-          <Link href="/om-klinikken" className="text-sm font-medium transition-colors hover:text-foreground/80">
-            Om Klinikken
-          </Link>
-          <Link href="/abningstider" className="text-sm font-medium transition-colors hover:text-foreground/80">
-            Åbningstider
-          </Link>
-          <Link href="/kontakt" className="text-sm font-medium transition-colors hover:text-foreground/80">
-            Kontakt
-          </Link>
-          <Link href="/henvisninger" className="text-sm font-medium transition-colors hover:text-foreground/80">
-            Henvisninger
-          </Link>
-          <Link href="/priser" className="text-sm font-medium transition-colors hover:text-foreground/80">
-            Priser
-          </Link>
-          <Link href="/links" className="text-sm font-medium transition-colors hover:text-foreground/80">
-            Links
-          </Link>
+      <SheetContent side="left" className="p-0">
+        <nav className="flex flex-col">
+          {routes.map((route) => (
+            <Link
+              key={route.href}
+              href={route.href}
+              onClick={() => setOpen(false)}
+              className={cn(
+                "px-6 py-4 text-lg border-b border-border/50 transition-colors",
+                "relative",
+                pathname === route.href ? "font-medium bg-accent/5" : "hover:bg-accent/5",
+              )}
+            >
+              {route.label}
+            </Link>
+          ))}
         </nav>
       </SheetContent>
     </Sheet>
   )
-} 
+}
